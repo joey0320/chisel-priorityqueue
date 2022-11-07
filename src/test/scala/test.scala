@@ -52,6 +52,7 @@ class PriorityQueueTester extends AnyFlatSpec with ChiselScalatestTester {
       c.io.cmd.bits.poke(0.U)
       c.io.dequed_keyval.valid.expect(true.B)
       c.io.dequed_keyval.bits.key.expect(3.U)
+      c.io.dequed_keyval.bits.value.symbol.expect(3.U)
 
       c.clock.step()
       c.io.cmd.valid.poke(true.B)
@@ -82,24 +83,28 @@ class PriorityQueueTester extends AnyFlatSpec with ChiselScalatestTester {
       c.io.cmd.bits.poke(0.U)
       c.io.dequed_keyval.valid.expect(true.B)
       c.io.dequed_keyval.bits.key.expect(2.U)
+      c.io.dequed_keyval.bits.value.symbol.expect(2.U)
 
       c.clock.step()
       c.io.cmd.valid.poke(true.B)
       c.io.cmd.bits.poke(0.U)
       c.io.dequed_keyval.valid.expect(true.B)
       c.io.dequed_keyval.bits.key.expect(2.U)
+      c.io.dequed_keyval.bits.value.symbol.expect(2.U)
 
       c.clock.step()
       c.io.cmd.valid.poke(true.B)
       c.io.cmd.bits.poke(0.U)
       c.io.dequed_keyval.valid.expect(true.B)
       c.io.dequed_keyval.bits.key.expect(4.U)
+      c.io.dequed_keyval.bits.value.symbol.expect(4.U)
 
       c.clock.step()
       c.io.cmd.valid.poke(true.B)
       c.io.cmd.bits.poke(0.U)
       c.io.dequed_keyval.valid.expect(true.B)
       c.io.dequed_keyval.bits.key.expect(5.U)
+      c.io.dequed_keyval.bits.value.symbol.expect(5.U)
 
       c.clock.step()
       c.io.cmd.valid.poke(true.B)
