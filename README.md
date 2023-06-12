@@ -1,11 +1,8 @@
 Chisel Priority Queue
 =======================
 
-You've done the [Chisel Bootcamp](https://github.com/freechipsproject/chisel-bootcamp), and now you
-are ready to start your own Chisel project.  The following procedure should get you started
-with a clean running [Chisel3](https://www.chisel-lang.org/) project.
-
-## Make your own Chisel3 project
+### Background
+The microarchitecture is based off of this paper. [Efficent-Priority-Queue](https://ieeexplore.ieee.org/document/4380693)
 
 ### Dependencies
 
@@ -47,3 +44,9 @@ You should see a whole bunch of output that ends with something like the followi
 If you see the above then...
 
 #### It worked!
+
+### Other resources
+
+- [Chisel Bootcamp](https://github.com/freechipsproject/chisel-bootcamp)
+- [Chisel3](https://www.chisel-lang.org/)
+
