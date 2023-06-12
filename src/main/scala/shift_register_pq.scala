@@ -2,6 +2,7 @@ package priorityqueue
 
 import chisel3._
 import chisel3.util._
+import scala.collection.mutable
 
 
 // TODO : support enq & deq at the same cycle
@@ -121,3 +122,12 @@ class PriorityQueue(queSize: Int, keyWidth: Int, value: ValueInfo) extends Modul
   io.dequed_keyval.valid := io.cmd.valid && (io.cmd.bits === CMD_DEQ) && (stages(0).io.output_prev.key =/= MAX_VALUE)
   io.dequed_keyval.bits <> stages(0).io.output_prev
 }
+
+
+
+object GeneratePriorityQueue extends App {
+  (new chisel3.stage.ChiselStage).emitVerilog(
+    new PriorityQueue(4, 2, new ValueInfo), args
+  )
+}
+
